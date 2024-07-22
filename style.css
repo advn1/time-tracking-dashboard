@@ -1,0 +1,315 @@
+:root {
+    --user-card-bg: hsl(246, 80%, 60%);
+    --dark-bottom-card-bg: hsl(236, 44%, 20%);
+    --font-color: hsl(235, 45%, 61%);
+    --work-bg: hsl(15, 100%, 70%);
+    --play-bg: hsl(195, 74%, 62%);
+    --study-bg: hsl(348, 100%, 68%);
+    --exercise-bg: hsl(145, 58%, 55%);
+    --social-bg: hsl(264, 64%, 52%);
+    --selfcare-bg: hsl(43, 84%, 65%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Rubik', 'sans-serif';
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    max-width: 1600px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: 1;
+    gap: 10px 15px;
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* USER PROFILE */
+
+.main-layer {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    max-width: 500px;
+    height: 180px;
+    background-color: var(--dark-bottom-card-bg);
+    padding-bottom: 20px;
+    color: var(--font-color);
+    border-radius: 15px;
+}
+
+.profile-card {
+    max-height: 600px;
+    height: 100%;
+    width: 100%;
+}
+
+.main-layer:not(.profile-card) {
+    max-height: 300px;
+    min-height: 180px;
+    height: 100%;
+    width: 100%;
+}
+
+.top-layer {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    top:0%;
+    background-color: var(--user-card-bg);
+    z-index: 1000;
+    border-radius: 15px;
+}
+
+.top-layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 70px;
+    border: 3px solid white;
+    border-radius: 1000px;
+    margin-right: 15px;
+}
+
+.profile-card h3 {
+    color: hsl(236, 100%, 87%);
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.profile-card h1 {
+    color: white;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+
+.profile-card span:hover {
+    cursor: pointer;
+}
+
+.profile-card span {
+    margin-left: 25px;
+    padding: 3px;
+}
+
+/* ACTIVITY CARD */
+
+.info-card-activity {
+    top: 25%;
+    z-index: 1000;
+    height: 75%;
+    background-color: var(--dark-bottom-card-bg);
+}
+
+.info-card-activity {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 30px 5px 30px;
+}
+
+.info-card-activity .work-text {
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.info-card-activity .hours-text {
+    font-size: 1.7rem;
+    color: white;
+    font-weight: 300;
+}
+
+.info-card-activity .last-text {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--font-color);
+    margin-top: 10px;
+}
+
+.left-part, .right-part {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-part {
+    flex-basis: 30%;
+}
+
+.right-part {
+    text-align: right;
+}
+
+.dots {
+    margin-bottom: 10px;
+}
+
+.icon {
+    position: absolute;
+    margin: 0px 15px 0px 0px;
+    right: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.work-top-layer {
+    background-color: var(--work-bg);
+}
+
+.play-top-layer {
+    background-color: var(--play-bg);
+}
+
+.study-top-layer {
+    background-color: var(--study-bg);
+}
+
+.exercise-top-layer {
+    background-color: var(--exercise-bg);
+}
+
+.social-top-layer {
+    background-color: var(--social-bg);
+}
+
+.selfcare-top-layer {
+    background-color: var(--selfcare-bg);
+}
+
+@media (min-width: 825px) {
+    .grid-container {
+        width: 90%;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .profile-card {
+        grid-row: 1 / 4;
+        height: 100%;
+    }
+
+    .user-info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+        padding-left: 20px;
+    }
+
+    .avatar-img {
+        width: 100px;
+    }
+
+    .user-info-container h3 {
+        font-size: 1.6rem;
+    }
+
+    .user-info-container h1 {
+        font-size: 3.2rem;
+    }
+
+    .user-info-container {
+        height: 85%;
+    }
+
+    .social-top-layer {
+        grid-row: 3 / 3;
+        grid-column: 2 / 3;
+    }
+
+    .selfcare-top-layer {
+        grid-row: 3 / 3;
+        grid-column: 3 / 3;
+    }
+}
+
+@media (min-width: 1400px) {
+    .grid-container {
+        width: 100%;
+        grid-template-rows: repeat(4, 150px);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px 15px;
+    }
+
+    .user-info-container {
+        height: 75%;
+        padding-left: 25px;
+    }
+
+    .info-card-activity {
+        justify-content: flex-start;
+    }
+
+    .left-part .work-text {
+        font-size: 1.4rem;
+    }
+
+    .right-part {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+
+    .right-part .hours-text {
+        font-size: 4rem;
+    }
+
+    .profile-card { 
+        grid-row: 1 / 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .main-layer:not(.profile-card) {
+        height: 280px;
+    }
+
+    .work-top-layer, .play-top-layer, .study-top-layer {
+        grid-row: 1 / 3;
+    }
+
+    .exercise-top-layer {
+        grid-row: 3 / 5;
+        grid-column: 2 / 2;
+    }
+
+    .social-top-layer {
+        grid-row: 3 / 5;
+        grid-column: 3 / 3;
+    }
+
+    .selfcare-top-layer {
+        grid-row: 3 / 5;
+        grid-column: 4 / 4;
+    }
+}
+
+.current-mode {
+    color: white;
+    background-color: rgb(94, 94, 94);
+    border-radius: 15px;
+}
